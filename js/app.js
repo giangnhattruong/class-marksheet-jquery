@@ -155,9 +155,6 @@ const config = {
 
 /* Add dynamic texts */
 setNotify();
-$('#form-submit-error').text(config.submitErrorMsg);
-$('#toggle-calculate-btn').text(config.showAvgText);
-$('#toggle-find-exellent-btn').text(config.showExlText);
 
 /* Refrest the table to hide it when there aren't no data */
 updateTable();
@@ -358,6 +355,9 @@ function toggleBtnText(button, showText, hideText) {
  */
 function updateTable() {
 	$('#table-rows').empty();
+	$('#form-submit-error').text(config.submitErrorMsg);
+	$('#toggle-calculate-btn').text(config.showAvgText);
+	$('#toggle-find-exellent-btn').text(config.showExlText);
 	const students = getStudents();
 	$.each(students, addTableRows);
 
